@@ -1,0 +1,25 @@
+Right Ascension,Month when visible in the evening,Month when visible at midnight,Month when visible in the morning
+00h,October,September,August
+01h,November,September,August
+02h,November,October,September
+03h,December,October,September
+04h,December,November,September
+05h,January,November,October
+06h,January,December,October
+07h,February,December,November
+08h,February,January,November
+09h,March,January,December
+10h,March,February,December
+11h,April,February,January
+12h,April,March,January
+13h,May,March,February
+14h,May,April,February
+15h,June,April,March
+16h,June,May,March
+17h,July,May,April
+18h,July,June,April
+19h,August,June,May
+20h,August,July,May
+21h,September,July,June
+22h,September,August,June
+23h,October,August,July
