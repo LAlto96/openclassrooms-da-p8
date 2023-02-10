@@ -1,0 +1,35 @@
+\documentclass{article}
+% Allow the usage of UTF-8 characters
+\usepackage[utf8]{inputenc}
+% Allow the usage of graphics (.png, .jpg)
+\usepackage{graphicx}
+\usepackage{array,multirow,makecell}
+\setcellgapes{1pt}
+\makegapedcells
+\usepackage{cellspace}
+\cellspacetoplimit 10pt
+\cellspacebottomlimit 10pt
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+% Start the document
+\begin{document}
+
+% Create a new 1st level heading
+\section{Projet}
+\subsection{Vision Stratégique}
+Fournir un outil permettant de synthétiser et faciliter l'accès à la connaissance pour un astronome amateur. Ainsi un dashboard sera crée afin de donner des outils permettant à l'utilisateur de préparer son observation du ciel. Beaucoup d'Open Data existe dans le domaine, la majorité des données provenant d'organisme publiques tels que la \textit{NASA}) 
+\subsection{Cas d'usages}
+\begin{tabular}{|S{L{5cm}}|S{L{5cm}}|}
+\hline Besoin & Réponse au besoin  \\
+\hline Une zone d'observation sans pollution lumineuse & Une carte référencent les enregistrements de pollutions lumineuse\\
+\hline Un ciel sans Lune & Indicateur en fonction du calendrier Lunaire \\
+\hline Quels sont les objets observables dans le ciel ? & Affichage des objets sur un planisphère du ciel (scatter plot pour les objets lointains, line plot pour les objets proches). Ceux-ci pourront êtres filtrés par type d'objet, période d'observation, etc. \\
+\hline 
+\end{tabular}
+
+% Uncomment the following two lines if you want to have a bibliography
+%\bibliographystyle{alpha}
+%\bibliography{document}
+
+\end{document}
