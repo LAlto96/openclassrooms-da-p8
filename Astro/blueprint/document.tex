@@ -1,32 +1,94 @@
 \documentclass{article}
 % Allow the usage of UTF-8 characters
+
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=2.5cm}
+
 \usepackage[utf8]{inputenc}
 % Allow the usage of graphics (.png, .jpg)
 \usepackage{graphicx}
+\usepackage{hyperref}
 \usepackage{array,multirow,makecell}
-\setcellgapes{1pt}
-\makegapedcells
+% \setcellgapes{1pt}
+% \makegapedcells
 \usepackage{cellspace}
 \cellspacetoplimit 10pt
 \cellspacebottomlimit 10pt
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
-\newcolumntype{L}[1]{>{\raggedright\arraybackslash }b{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash }m{#1}}
 \newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
 % Start the document
 \begin{document}
 
 % Create a new 1st level heading
 \section{Projet}
-\subsection{Vision Stratégique}
-Fournir un outil permettant de synthétiser et faciliter l'accès à la connaissance pour un astronome amateur. Ainsi un dashboard sera crée afin de donner des outils permettant à l'utilisateur de préparer son observation du ciel. Beaucoup d'Open Data existe dans le domaine, la majorité des données provenant d'organisme publiques tels que la \textit{NASA}) 
-\subsection{Cas d'usages}
-\begin{tabular}{|S{L{5cm}}|S{L{5cm}}|}
-\hline Besoin & Réponse au besoin  \\
-\hline Une zone d'observation sans pollution lumineuse & Une carte référencent les enregistrements de pollutions lumineuse\\
-\hline Un ciel sans Lune & Indicateur en fonction du calendrier Lunaire \\
-\hline Quels sont les objets observables dans le ciel ? & Affichage des objets sur un planisphère du ciel (scatter plot pour les objets lointains, line plot pour les objets proches). Ceux-ci pourront êtres filtrés par type d'objet, période d'observation, etc. \\
+\subsection{Objectif}
+\noindent
+Fournir un outil permettant de synthétiser et faciliter l'accès à la connaissance pour un astronome amateur. Ainsi un dashboard sera crée afin de donner des outils permettant à l'utilisateur de préparer son observation du ciel. Beaucoup d'Open Data existe dans le domaine, la majorité des données provenant d'organisme publiques tels que la \textit{NASA}).\\\\
+\noindent
+L'outil offrira une vue synthétique de différents paramètres apportant une aide à la décision (Pollution lumineuse (naturelle ou artificielle), météo, objets remarquables visibles, position des objets dans le ciel, intensité lumineuse/Albedo. Différents filtres permettront de n'afficher que les informations importantes à l'utilisateur. L'astronomie regorgeant de données, la visualisation devra aller à l'essentiel pour ne pas noyer l'utilisateur.
+
+
+\subsection{Sources de Données}
+
+- \textit{NASA} : \url{https://data.nasa.gov/}\\
+- \textit{Datastro.eu} : \url{https://datastro.eu/}\\
+- \textit{Wikipedia (IAU Designated constellations)} : \url{https://en.wikipedia.org/wiki/IAU_designated_constellations/}\\
+\end{itemize}
+
+
+\subsection{Cas d'usages/ Blueprint}
+\begin{tabular}{|L{3cm}|L{4cm}|L{5cm}|L{3cm}|}
+% Zone Observation
+\hline Besoin utilisateur 
+& Mesures spécifiques à utiliser 
+& Visualisation 
+& Vue  \\
+
+\hline Une zone d'observation sans pollution lumineuse 
+& Une carte référencent les enregistrements de pollutions lumineuse 
+& Carte de France 
+& Qualité du ciel\\
+
+\hline La météo prévue pour le jour retenu pour l'observation
+& \begin{itemize}
+\item Couverture Nuageuse
+\item Transparence
+\item Température
+\end{itemize}
+& Valeurs des mesures et scoring
+& Qualité du ciel\\
+
+\hline Un ciel sans Lune 
+& Indicateur en fonction du calendrier Lunaire 
+& Scoring en fonction des différentes phases de la Lune
+& Qualité du ciel\\
+
+\hline Quels sont les objets observables dans le ciel ? 
+& Affichage des objets sur un planisphère du ciel Ceux-ci pourront êtres filtrés par type d'objet, période d'observation, etc. 
+& \begin{itemize}
+\item scatter plot pour les objets lointains 
+\item line plot pour les objets proches). 
+\item Les objets seront colorés en fonction de leur type (planètes, étoiles, galaxies, etc.).
+\item Bar Plot et Box Plot sur la magnitude des objets en fonction de leur type
+\item un filtre en fonction du materiel disponible (télescope, lunette, etc.)
+\end{itemize}
+& \begin{itemize} 
+\item Messiers 
+\item Ephemerides 
+\end{itemize} \\
+
+\hline Planisphère des constellations
+& Declinaison et ascension droite des constellations
+& \begin{itemize}
+\item Scatter Plot
+\item Lien vers la constellation IAU
+\end{itemize}
+& Carte des constellations\\
+
 \hline 
 \end{tabular}
+
 
 % Uncomment the following two lines if you want to have a bibliography
 %\bibliographystyle{alpha}
