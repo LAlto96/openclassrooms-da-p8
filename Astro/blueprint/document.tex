@@ -1,12 +1,15 @@
 \documentclass{article}
-% Allow the usage of UTF-8 characters
+% Allow the usage of UTF-8 characters + French
+\usepackage[main=french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 \usepackage{geometry}
 \geometry{hmargin=2.5cm,vmargin=2.5cm}
 
-\usepackage[utf8]{inputenc}
 % Allow the usage of graphics (.png, .jpg)
 \usepackage{graphicx}
+
 \usepackage{hyperref}
 \usepackage{array,multirow,makecell}
 % \setcellgapes{1pt}
@@ -17,33 +20,69 @@
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash }b{#1}}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash }m{#1}}
 \newcolumntype{C}[1]{>{\centering\arraybackslash }b{#1}}
+
+\setlength\parindent{0pt}
+\usepackage{parskip}
+\usepackage{enumitem}
+\title{Un Dashboard pour l'Association Française d'Astronomie}
+\author{Ludovic Lafon}
 % Start the document
 \begin{document}
-
+\maketitle
+\tableofcontents
 % Create a new 1st level heading
 \section{Projet}
-\subsection{Objectif}
-\noindent
-Fournir un outil permettant de synthétiser et faciliter l'accès à la connaissance pour un astronome amateur. Ainsi un dashboard sera crée afin de donner des outils permettant à l'utilisateur de préparer son observation du ciel. Beaucoup d'Open Data existe dans le domaine, la majorité des données provenant d'organisme publiques tels que la \textit{NASA}).\\\\
-\noindent
-L'outil offrira une vue synthétique de différents paramètres apportant une aide à la décision (Pollution lumineuse (naturelle ou artificielle), météo, objets remarquables visibles, position des objets dans le ciel, intensité lumineuse/Albedo. Différents filtres permettront de n'afficher que les informations importantes à l'utilisateur. L'astronomie regorgeant de données, la visualisation devra aller à l'essentiel pour ne pas noyer l'utilisateur.
+\subsection{Contexte}
+Vous êtes consultant Data Analyst pour l'Association Française d'astronomie.
 
+L'Association Française d'Astronomie (AFA) est une organisation à but non lucratif qui a pour mission de promouvoir l'astronomie auprès du grand public et de soutenir les astronomes amateurs en France. Depuis sa création, l'AFA s'engage à faire découvrir l'astronomie à tous les curieux, qu'ils soient novices ou experts.
 
-\subsection{Sources de Données}
+Aujourd'hui, avec l'explosion des données astronomiques disponibles, il devient de plus en plus difficile pour les astronomes amateurs de ssynthétiser les informations qui seront utiles à leur observation du ciel. C'est pourquoi l'AFA a décidé de mettre en place un Dashboard pour aider ces astronomes à accéder aux informations les plus pertinentes.
 
-- \textit{NASA} : \url{https://data.nasa.gov/}\\
-- \textit{Datastro.eu} : \url{https://datastro.eu/}\\
-- \textit{Wikipedia (IAU Designated constellations)} : \url{https://en.wikipedia.org/wiki/IAU_designated_constellations/}\\
+Le Dashboard sera un outil convivial et facile à utiliser pour les astronomes amateurs, leur permettant  de comprendre des données astronomiques complexes. L'outil s'intègrera parfaitement avec les objectifs de l'AFA, qui cherchent à promouvoir l'astronomie et à encourager les astronomes amateurs à s'engager dans la recherche. En fournissant un accès facile aux données astronomiques, le Dashboard aidera à renforcer la communauté des astronomes amateurs et à susciter un intérêt pour l'astronomie chez le grand public.
+
+En résumé, le Dashboard de l'AFA sera un outil précieux pour les astronomes amateurs en France, en leur permettant de rester informés et engagés dans leur domaine, tout en renforçant la communauté astronomique et en encourageant l'intérêt pour l'astronomie.
+\subsection{Explication du besoin}
+\subsubsection{Objectifs}
+Voici une synthèse détaillée des objectifs du Dashboard de l'Association Française d'Astronomie :
+
+\begin{itemize}
+	\setlength\itemsep{0.5em}
+	\item Affichage de la position des objets du catalogue de Messier dans un planisphère du ciel : le Dashboard permettra d'afficher les positions des objets du catalogue de Messier dans un planisphère du ciel, avec l'ascension droite et la déclinaison pour chaque objet. Cela aidera les astronomes amateurs à localiser facilement les objets du catalogue de Messier et à planifier leurs observations.
+	\item Affichage des éphémérides des planètes du système solaire : les éphémérides des planètes du système solaire seront également affichées sur le Dashboard. Les astronomes amateurs pourront aisément connaître la position des planètes dans le ciel et planifier leurs observations en conséquence.
+	\item Affichage d'une carte des constellations : le Dashboard permettra d'afficher une carte des constellations, ce qui aidera les astronomes amateurs à reconnaître les constellations dans le ciel et à les utiliser comme points de repère pour localiser les objets célestes.
+	\item Affichage de différentes informations, comme la magnitude de l'objet : Le Dashboard affichera aussi différentes informations sur les objets célestes, comme leur magnitude apparente. Cela aidera les astronomes amateurs à sélectionner les objets à observer en fonction de leur luminosité.
+	\item Affichage de la météo : Le Dashboard affichera des informations météorologiques en temps réel pour la région choisie, afin que les astronomes amateurs puissent planifier leurs observations en fonction des conditions météorologiques.
+	\item Affichage du calendrier lunaire : Le Dashboard affichera de plus un calendrier lunaire, permettant aux astronomes amateurs de planifier leurs observations en fonction des phases de la Lune.
+	\item Affichage d'une carte de pollution lumineuse : Le Dashboard affichera une carte de la pollution lumineuse dans la région choisie, ce qui aidera les astronomes amateurs à trouver les meilleurs endroits pour observer le ciel nocturne et minimiser l'impact de la pollution lumineuse.
 \end{itemize}
 
+En somme, le Dashboard de l'Association Française d'Astronomie a pour objectif de fournir aux astronomes amateurs toutes les informations dont ils ont besoin pour planifier leurs observations, en un seul endroit facilement accessible. En fournissant une vue d'ensemble des éphémérides, des cartes du ciel, des informations sur les objets célestes et sur les conditions environnementales, le Dashboard aidera les astronomes amateurs à profiter pleinement de leur passion pour l'astronomie.
 
-\subsection{Cas d'usages/ Blueprint}
-\begin{tabular}{|L{3cm}|L{4cm}|L{5cm}|L{3cm}|}
+\subsubsection{Cas d'usages}
+Voici une liste de différents cas d'usage liés au Dashboard de l'Association Française d'Astronomie :
+\begin{itemize}
+	\setlength\itemsep{0.5em}
+	\item Planification d'observations : Le Dashboard permet aux astronomes amateurs de planifier leurs observations en utilisant les informations fournies sur les positions des objets du catalogue de Messier, les éphémérides des planètes, les constellations, les informations sur les objets célestes et les conditions environnementales. Les astronomes peuvent utiliser ces informations pour déterminer quand et où observer les objets célestes, en fonction de leur luminosité et de leur position dans le ciel.
+	\item Localisation des objets célestes : Le Dashboard permet aux astronomes amateurs de localiser facilement les objets du catalogue de Messier en utilisant la carte du ciel et les informations sur l'ascension droite et la déclinaison de chaque objet. Les astronomes peuvent également utiliser la carte des constellations comme point de repère pour localiser les objets célestes.
+	\item Suivi des conditions environnementales : Le Dashboard fournit des informations en temps réel sur les conditions météorologiques et la pollution lumineuse, permettant aux astronomes amateurs de sélectionner les meilleurs moments et les meilleurs endroits pour observer le ciel nocturne.
+	\item Planification de l'observation de la Lune : Le Dashboard affiche un calendrier lunaire, permettant aux astronomes amateurs de planifier l'observation de la Lune en fonction de ses différentes phases.
+	\item Préparation des équipements d'observation : Les astronomes amateurs peuvent utiliser les informations fournies sur les objets célestes, comme leur magnitude apparente, pour sélectionner les équipements d'observation appropriés.
+\end{itemize}
+
+\subsection{Sources de Données}
+\begin{itemize}[leftmargin=*]
+	\item \textit{NASA} : \url{https://data.nasa.gov/}
+	\item \textit{Datastro.eu} : \url{https://datastro.eu/}
+	\item \textit{Wikipedia (IAU Designated constellations)} :\\\url{https://en.wikipedia.org/wiki/IAU_designated_constellations/}
+\end{itemize}
+\section{Blueprint}
+\begin{tabular}{|L{3cm}|L{4cm}|L{5cm}|L{2.5cm}|}
 % Zone Observation
-\hline Besoin utilisateur 
-& Mesures spécifiques à utiliser 
-& Visualisation 
-& Vue  \\
+\hline \textbf{Besoin utilisateur} 
+& \textbf{Mesures spécifiques à utiliser}
+& \textbf{Visualisation}
+& \textbf{Vue}  \\
 
 \hline Une zone d'observation sans pollution lumineuse 
 & Une carte référencent les enregistrements de pollutions lumineuse 
@@ -51,7 +90,7 @@ L'outil offrira une vue synthétique de différents paramètres apportant une ai
 & Qualité du ciel\\
 
 \hline La météo prévue pour le jour retenu pour l'observation
-& \begin{itemize}
+& \begin{itemize}[leftmargin=*]
 \item Couverture Nuageuse
 \item Transparence
 \item Température
@@ -66,21 +105,21 @@ L'outil offrira une vue synthétique de différents paramètres apportant une ai
 
 \hline Quels sont les objets observables dans le ciel ? 
 & Affichage des objets sur un planisphère du ciel Ceux-ci pourront êtres filtrés par type d'objet, période d'observation, etc. 
-& \begin{itemize}
+& \begin{itemize}[leftmargin=*]
 \item scatter plot pour les objets lointains 
 \item line plot pour les objets proches). 
 \item Les objets seront colorés en fonction de leur type (planètes, étoiles, galaxies, etc.).
 \item Bar Plot et Box Plot sur la magnitude des objets en fonction de leur type
 \item un filtre en fonction du materiel disponible (télescope, lunette, etc.)
 \end{itemize}
-& \begin{itemize} 
+& \begin{itemize}[leftmargin=*]
 \item Messiers 
 \item Ephemerides 
 \end{itemize} \\
 
 \hline Planisphère des constellations
 & Declinaison et ascension droite des constellations
-& \begin{itemize}
+& \begin{itemize}[leftmargin=*]
 \item Scatter Plot
 \item Lien vers la constellation IAU
 \end{itemize}

@@ -1,0 +1,8 @@
+\babel@toc {french}{}
+\contentsline {section}{\numberline {1}Projet}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Contexte}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Explication du besoin}{1}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Objectifs}{1}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Cas d'usages}{2}{subsubsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.3}Sources de Données}{2}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Blueprint}{3}{section.2}%
